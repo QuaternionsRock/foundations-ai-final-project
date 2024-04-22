@@ -10,25 +10,25 @@ import requests as _requests
 if _typing.TYPE_CHECKING:
     from collections.abc import Iterable
 
-    Interval = _typing.Literal["1min", "5min", "15min", "30min", "60min"]
+Interval = _typing.Literal["1min", "5min", "15min", "30min", "60min"]
 
-    Topic = _typing.Literal[
-        "blockchain",
-        "earnings",
-        "ipo",
-        "mergers_and_acquisitions",
-        "financial_markets",
-        "economy_fiscal",
-        "economy_monetary",
-        "economy_macro",
-        "energy_transportation",
-        "finance",
-        "life_sciences",
-        "manufacturing",
-        "real_estate",
-        "retail_wholesale",
-        "technology",
-    ]
+Topic = _typing.Literal[
+    "blockchain",
+    "earnings",
+    "ipo",
+    "mergers_and_acquisitions",
+    "financial_markets",
+    "economy_fiscal",
+    "economy_monetary",
+    "economy_macro",
+    "energy_transportation",
+    "finance",
+    "life_sciences",
+    "manufacturing",
+    "real_estate",
+    "retail_wholesale",
+    "technology",
+]
 
 DEFAULT_MAX_REQUESTS = 5
 
@@ -54,7 +54,7 @@ _TOPIC_MAP = {
 
 def get_time_series_intraday(
     symbol: str,
-    interval: "Interval",
+    interval: Interval,
     adjusted: bool | None = None,
     extended_hours: bool | None = None,
     month: _datetime.date | None = None,
@@ -96,7 +96,7 @@ def get_time_series_intraday(
 
 def all_time_series_intraday(
     symbol: str,
-    interval: "Interval",
+    interval: Interval,
     adjusted: bool | None = None,
     extended_hours: bool | None = None,
     *,
