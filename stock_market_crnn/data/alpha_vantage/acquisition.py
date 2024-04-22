@@ -30,9 +30,10 @@ if _typing.TYPE_CHECKING:
         "technology",
     ]
 
-_URL = "https://www.alphavantage.co/query"
 DEFAULT_MAX_REQUESTS = 5
-TOPIC_MAP = {
+
+_URL = "https://www.alphavantage.co/query"
+_TOPIC_MAP = {
     "Blockchain": "blockchain",
     "Earnings": "earnings",
     "IPO": "ipo",
@@ -213,7 +214,7 @@ def all_news_sentiment(
                     )
                 }
                 | {
-                    TOPIC_MAP[topic["topic"]]: topic["relevance_score"]
+                    _TOPIC_MAP[topic["topic"]]: topic["relevance_score"]
                     for topic in json_article["topics"]
                 }
             )
