@@ -1,0 +1,3 @@
+# Requirements specific to the CPU environment
+-r requirements_common.txt
+tensorflow>=2.16.1

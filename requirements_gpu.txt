@@ -1,0 +1,3 @@
+# Requirements specific to the GPU environment
+-r requirements_common.txt
+tensorflow[and-cuda]>=2.16.1

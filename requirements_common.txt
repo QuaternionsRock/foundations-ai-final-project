@@ -1,0 +1,6 @@
+# Requirements for both the CPU and GPU environments
+black>=24.4.0
+matplotlib>=3.8.4
+numpy>=1.26.4
+pandas>=2.2.2
+requests>=2.31.0
