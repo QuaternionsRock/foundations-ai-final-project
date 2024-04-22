@@ -1,0 +1,9 @@
+{
+    "symbols": ["AAPL", "AMZN", "GOOG", "MSFT", "NVDA", "TSM"],
+    "interval": "60min",
+    "adjusted": true,
+    "extended_hours": true,
+    "time_from": "2022-03-01",
+    "time_to": "2024-04-01",
+    "data_path": "./data/"
+}
