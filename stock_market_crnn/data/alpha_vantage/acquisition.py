@@ -126,7 +126,9 @@ def all_time_series_intraday(
             if r is None:
                 return None
             dfs.append(
-                _pd.read_csv(_io.StringIO(r.text), index_col="timestamp", parse_dates=True).iloc[::-1]
+                _pd.read_csv(
+                    _io.StringIO(r.text), index_col="timestamp", parse_dates=True
+                ).iloc[::-1]
             )
     df = _pd.concat(dfs)
     return df.loc[time_from:time_to]

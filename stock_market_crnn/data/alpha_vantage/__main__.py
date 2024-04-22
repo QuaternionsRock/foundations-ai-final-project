@@ -6,7 +6,10 @@ import json
 from pathlib import Path
 import sys
 
-parser = argparse.ArgumentParser(prog=".".join(__name__.split(".")[:-1]), description="Acquire or preprocess data from Alpha Vantage.")
+parser = argparse.ArgumentParser(
+    prog=".".join(__name__.split(".")[:-1]),
+    description="Acquire or preprocess data from Alpha Vantage.",
+)
 subparsers = parser.add_subparsers(dest="command", required=True)
 parser.add_argument("config_path", type=Path, help="path to the configuration file")
 
