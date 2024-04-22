@@ -204,22 +204,19 @@ def all_news_sentiment(
             time_from = time_published
             if time_from > time_to:
                 break
-            article = (
-                {"time_published": time_published}
-                | {
-                    k: json_article[k]
-                    for k in (
-                        "time_published",
-                        "source",
-                        "category_within_source",
-                        "overall_sentiment_score",
-                    )
-                }
-                | {
-                    _TOPIC_MAP[topic["topic"]]: topic["relevance_score"]
-                    for topic in json_article["topics"]
-                }
-            )
+            article = {"time_published": time_published}
+            article |= {
+                k: json_article[k]
+                for k in (
+                    "source",
+                    "category_within_source",
+                    "overall_sentiment_score",
+                )
+            }
+            article |= {
+                _TOPIC_MAP[topic["topic"]]: topic["relevance_score"]
+                for topic in json_article["topics"]
+            }
             for ticker_sentiment in json_article["ticker_sentiment"]:
                 if ticker_sentiment["ticker"] == symbol:
                     article |= {
